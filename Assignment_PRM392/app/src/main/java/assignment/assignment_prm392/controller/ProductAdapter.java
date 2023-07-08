@@ -53,6 +53,7 @@ public class ProductAdapter extends BaseAdapter {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(layout, viewGroup, false);
             holder = new ViewHolder();
+            holder.img = view.findViewById(R.id.imageView);
             holder.tvHeader = view.findViewById(R.id.tvProductHeader);
             holder.tvDesc = view.findViewById(R.id.tvProductDesc);
             view.setTag(holder);
@@ -64,6 +65,7 @@ public class ProductAdapter extends BaseAdapter {
 //        holder.btnEdit.setFocusableInTouchMode(false);
 
         ProductDTO product = productDTOList.get(i);
+        holder.img.setImageResource(R.drawable.ic_launcher_background);
         holder.tvHeader.setText(product.getName());
         holder.tvDesc.setText(product.getDescription());
 //        holder.btnEdit.setOnClickListener(click ->

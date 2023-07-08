@@ -1,19 +1,23 @@
 <resources>
     <string name="app_name">Assignment_PRM392</string>
-    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
-    <string name="back4app_app_id">yQbRtytNLws9S2yxR4vFykMZTCSav5HXV9tQJKz8</string>
-    <string name="back4app_client_key">AAatkURJnjuhDobCFz3H1NKqK2j5ZFvC9Shoi9q4</string>
     <string name="tvProductHeader">Header</string>
     <string name="tvProductDesc">Description</string>
     <string name="todo">TODO</string>
-    <string name="title_activity_product_list">ProductListActivity</string>
+
+    <!--  Strings used for back4app  -->
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+    <string name="back4app_app_id">87GVYEOGNN43tDMDahzAc3lRqXcVPTAOBNF1stpu</string>
+    <string name="back4app_client_key">hgu5fZkvzFyOiY7BRc5UtD9mLy6MpryxHQy7bWM2</string>
 
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <string name="first_fragment_label">List Product</string>
+    <string name="second_fragment_label">Product Detail</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="add_to_cart">Add To Cart</string>
+    <string name="title_activity_product">Product Title</string>
 </resources>

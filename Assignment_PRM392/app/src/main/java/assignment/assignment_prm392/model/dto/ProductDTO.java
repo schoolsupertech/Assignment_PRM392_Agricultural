@@ -1,35 +1,49 @@
 package assignment.assignment_prm392.model.dto;
 
-import jakarta.persistence.*;
+import java.io.Serializable;
 
-@Entity
-@Table(name = "product", schema = "Agricultural")
-public class ProductDTO {
-    private Long id;
+public class ProductDTO implements Serializable {
+    private String id;
 
     private String name;
 
     private String description;
 
-    private Integer number;
+    private int number;
 
     private Double price;
 
     private byte[] img;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    public Long getId() {
+    public ProductDTO() {
+    }
+
+    public ProductDTO(String id, String name, String description, int number, Double price) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.number = number;
+        this.price = price;
+    }
+
+    public ProductDTO(String id, String name, String description, int number, Double price, byte[] img) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.number = number;
+        this.price = price;
+        this.img = img;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public ProductDTO setId(Long id) {
+    public ProductDTO setId(String id) {
         this.id = id;
         return this;
     }
 
-    @Column(name = "name", length = 100)
     public String getName() {
         return name;
     }
@@ -39,37 +53,30 @@ public class ProductDTO {
         return this;
     }
 
-    @Column(name = "description", length = 200)
     public String getDescription() {
         return description;
     }
 
-    public ProductDTO setDescription(String description) {
+    public void setDescription(String description) {
         this.description = description;
-        return this;
     }
 
-    @Column(name = "number")
-    public Integer getNumber() {
+    public int getNumber() {
         return number;
     }
 
-    public ProductDTO setNumber(Integer number) {
+    public void setNumber(int number) {
         this.number = number;
-        return this;
     }
 
-    @Column(name = "price")
     public Double getPrice() {
         return price;
     }
 
-    public ProductDTO setPrice(Double price) {
+    public void setPrice(Double price) {
         this.price = price;
-        return this;
     }
 
-    @Column(name = "img")
     public byte[] getImg() {
         return img;
     }

@@ -19,7 +19,7 @@
             android:id="@+id/SecondFragment"
             android:name="assignment.assignment_prm392.controller.ProductDetailFragment"
             android:label="@string/second_fragment_label"
-            tools:layout="@layout/fragment_second">
+            tools:layout="@layout/fragment_product_detail">
 
         <action
                 android:id="@+id/action_SecondFragment_to_FirstFragment"

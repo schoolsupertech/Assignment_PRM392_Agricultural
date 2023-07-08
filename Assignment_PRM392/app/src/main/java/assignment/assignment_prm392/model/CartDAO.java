@@ -1,4 +1,4 @@
 package assignment.assignment_prm392.model;
 
-public interface CartDAO {
+public class CartDAO {
 }
