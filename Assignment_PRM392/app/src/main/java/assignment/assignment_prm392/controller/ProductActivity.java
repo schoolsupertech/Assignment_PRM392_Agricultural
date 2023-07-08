@@ -1,8 +1,6 @@
 package assignment.assignment_prm392.controller;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -10,7 +8,6 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import assignment.assignment_prm392.R;
 import assignment.assignment_prm392.databinding.ActivityProductBinding;
-import com.parse.ParseObject;
 
 public class ProductActivity extends AppCompatActivity {
     AppBarConfiguration appBarConfiguration;
@@ -20,7 +17,12 @@ public class ProductActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        initBack4App();
+//        Back4AppUtil.Init.initCustomer();
+//        Back4AppUtil.Init.initProduct();
+//        Back4AppUtil.Init.initOrder();
+//        Back4AppUtil.Init.initCart();
+//        Back4AppUtil.Init.initPayment();
+//        Back4AppUtil.Init.initStatus();
 
         binding = ActivityProductBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -39,24 +41,6 @@ public class ProductActivity extends AppCompatActivity {
 //            }
 //        });
 
-    }
-
-    private void initBack4App() {
-        // Init class for Back4App
-        ParseObject person = new ParseObject("Product");
-        person.put("name", "Carrot");
-        person.put("description", "Vegetable for rabbit");
-        person.put("number", 1399);
-        person.put("price", 27);
-        person.saveInBackground(e -> {
-            if(e != null) {
-                Log.d("ERROR", e.getMessage());
-            }
-            else {
-                Log.d("Info", "Object saved");
-                Toast.makeText(this, "Successfully saved", Toast.LENGTH_LONG).show();
-            }
-        });
     }
 
     @Override
