@@ -1,7 +1,7 @@
-package assignment.assignment_prm392.utils;
+package assignment.assignment_prm392;
 
 import android.app.Application;
-import assignment.assignment_prm392.R;
+
 import com.parse.Parse;
 
 public class App extends Application {
