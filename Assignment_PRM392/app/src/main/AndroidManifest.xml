@@ -30,6 +30,10 @@
                 android:exported="false">
         </activity>
         <activity
+            android:name=".controller.RegistrationActivity"
+            android:exported="false">
+        </activity>
+        <activity
             android:name=".controller.LoginActivity"
             android:exported="true">
             <intent-filter>

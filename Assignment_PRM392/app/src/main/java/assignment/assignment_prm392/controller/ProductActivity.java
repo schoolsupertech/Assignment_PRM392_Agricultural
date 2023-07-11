@@ -8,6 +8,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import assignment.assignment_prm392.R;
 import assignment.assignment_prm392.databinding.ActivityProductBinding;
+import assignment.assignment_prm392.utils.Back4AppUtil;
 
 public class ProductActivity extends AppCompatActivity {
     AppBarConfiguration appBarConfiguration;
