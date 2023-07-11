@@ -1,5 +1,7 @@
 package assignment.assignment_prm392.model;
 
+import android.util.Log;
+
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -10,25 +12,26 @@ import assignment.assignment_prm392.model.dto.CustomerDTO;
 
 public class CustomerDAO {
     public boolean checkLogin(String email, String password){
+        boolean flag = false;
 
+        try {
             //Reading data Object from Back4App
-            ParseQuery<ParseObject> query = ParseQuery.getQuery("User");
+            ParseQuery<ParseUser> query = ParseQuery.getQuery("User");
 
             query.whereEqualTo("email", email);
             query.whereEqualTo("password", password);
 
-            try {
-                ParseUser user = (ParseUser) query.getFirst();
-                System.out.println(user.toString());
-                // Đăng nhập thành công
-                return true;
-            } catch (ParseException e) {
-                System.out.printf("Loi neeee: %d" ,e.toString());
-                // Đăng nhập thất bại hoặc xảy ra lỗi
-                return false;
-            }
+            ParseUser user = (ParseUser) query.getFirst();
+            Log.d("Info", user.toString());
+//                // Đăng nhập thành công
+            flag = true;
+        } catch (ParseException e) {
+            flag = false;
+            System.out.printf("Loi neeee: %d" ,e.toString());
+//                // Đăng nhập thất bại hoặc xảy ra lỗi
+        }
 
-
+            return flag;
         }
         public CustomerDTO findUserByEmail(String email){
             ParseQuery<ParseObject> query = ParseQuery.getQuery("User");
@@ -52,8 +55,6 @@ public class CustomerDAO {
                 return null;
             }
             // trả về user
-
-
         }
     }
 
