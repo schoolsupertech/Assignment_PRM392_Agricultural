@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">Lab10</string>
-    <string name="back4app_server_url">https://parseapi.back4app.com</string>
-    <string name="back4app_app_id">87GVYEOGNN43tDMDahzAc3lRqXcVPTAOBNF1stpu</string>
-    <string name="back4app_client_key">hgu5fZkvzFyOiY7BRc5UtD9mLy6MpryxHQy7bWM2</string>
-</resources>
