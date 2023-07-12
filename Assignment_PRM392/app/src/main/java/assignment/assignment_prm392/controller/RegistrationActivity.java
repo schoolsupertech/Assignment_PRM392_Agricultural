@@ -52,18 +52,15 @@ Button btnSignup;
                     public void done(ParseException e) {
                         if (e == null) {
 
-                            showAlert("Successful Sign Up!", "Welcome" + "<Your username here>" +"!");
+                            showAlert("Successful Sign Up!", "Welcome" + etFullname.getText().toString() +"!");
+                            Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
+                            startActivity(intent);
                         } else {
                             ParseUser.logOut();
                             Toast.makeText(RegistrationActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
                         }
                     }
                 });
-
-
-
-
-
 
             }
         });
