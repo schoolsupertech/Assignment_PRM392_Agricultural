@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     List<Product> productList = new ArrayList<>();
+    List<Product> cartList = new ArrayList<>();
     ProductAdapter adapter;
     PraseAPI praseAPI;
 
@@ -30,20 +31,14 @@ public class MainActivity extends AppCompatActivity {
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        adapter = new ProductAdapter(productList);
+        adapter = new ProductAdapter(productList, cartList);
         recyclerView.setAdapter(adapter);
-
-
-
         Parse.initialize(new Parse.Configuration.Builder(this)
                 .applicationId(getString(R.string.back4app_app_id))
                 .clientKey(getString(R.string.back4app_client_key))
                 .server(getString(R.string.back4app_server_url))
                 .build());
-
         // Gọi phương thức getProductData() để lấy dữ liệu từ Parse
         praseAPI.getProductData(adapter);
     }
-
-
 }

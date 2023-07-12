@@ -8,14 +8,14 @@ import java.util.Arrays;
 public class PraseAPI {
     public void getProductData(ProductAdapter adapter) {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Product");
-        query.selectKeys(Arrays.asList("name", "price","number","description"));
+        query.selectKeys(Arrays.asList("name", "price", "number", "description"));
         query.findInBackground((objects, e) -> {
             if (e == null) {
                 // Xử lý danh sách đối tượng trả về
                 for (ParseObject object : objects) {
                     // Lấy giá trị của các cột từ đối tượng
                     String name = object.getString("name");
-                    long price = object.getNumber("price").longValue();
+                    int price = object.getInt("price");
                     int number = object.getInt("number");
                     String description = object.getString("description");
 
