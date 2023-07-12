@@ -1,5 +1,6 @@
 package assignment.assignment_prm392.controller;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,10 +52,12 @@ public class ProductDetailFragment extends Fragment {
 
         binding.btnBuyNow.setOnClickListener(click -> {
             NavHostFragment.findNavController(this)
-                    .navigate(R.id.action_ProductDetailFragment_to_OrderFragment);
+                    .navigate(R.id.action_ProductDetailFragment_to_OrderFragment, args);
         });
         binding.btnAddToCart.setOnClickListener(click -> {
-
+            Intent intent = new Intent(requireActivity(), CartActivity.class);
+            intent.putExtra("Product Detail", "");
+            startActivity(intent);
         });
     }
 

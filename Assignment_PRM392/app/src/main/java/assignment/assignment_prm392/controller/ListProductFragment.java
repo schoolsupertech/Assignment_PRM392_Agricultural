@@ -34,6 +34,7 @@ public class ListProductFragment extends Fragment {
         listView = view.findViewById(R.id.lvProduct);
 
         ProductDAO productDAO = new ProductDAO();
+
         listProduct = new ArrayList<>();
         listProduct = productDAO.getListProduct();
         productAdapter = new ProductAdapter(requireActivity(), R.layout.list_product, listProduct);

@@ -8,27 +8,27 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import assignment.assignment_prm392.R;
-import assignment.assignment_prm392.model.dto.ProductDTO;
+import assignment.assignment_prm392.model.dto.CartDTO;
 
 import java.util.List;
 
-public class ProductAdapter extends BaseAdapter {
+public class CartAdapter extends BaseAdapter {
     private Context context;
     private int layout;
-    private List<ProductDTO> productDTOList;
+    private List<CartDTO> listCart;
 
-    public ProductAdapter() {
+    public CartAdapter() {
     }
 
-    public ProductAdapter(Context context, int layout, List<ProductDTO> productDTOList) {
+    public CartAdapter(Context context, int layout, List<CartDTO> listCart) {
         this.context = context;
         this.layout = layout;
-        this.productDTOList = productDTOList;
+        this.listCart = listCart;
     }
 
     @Override
     public int getCount() {
-        return productDTOList.size();
+        return listCart.size();
     }
 
     @Override
@@ -47,7 +47,7 @@ public class ProductAdapter extends BaseAdapter {
     }
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        ProductAdapter.ViewHolder holder;
+        CartAdapter.ViewHolder holder;
 
         if(view == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -59,15 +59,15 @@ public class ProductAdapter extends BaseAdapter {
             view.setTag(holder);
         }
         else {
-            holder = (ViewHolder) view.getTag();
+            holder = (CartAdapter.ViewHolder) view.getTag();
         }
 //        holder.btnEdit.setFocusable(false);
 //        holder.btnEdit.setFocusableInTouchMode(false);
 
-        ProductDTO product = productDTOList.get(i);
-        holder.img.setImageResource(R.drawable.ic_launcher_background);
-        holder.tvHeader.setText(product.getName());
-        holder.tvDesc.setText(product.getDescription());
+        CartDTO cartDTO = listCart.get(i);
+        holder.img.setImageResource(R.mipmap.ic_launcher_round);
+//        holder.tvHeader.setText(cartDTO.getName());
+//        holder.tvDesc.setText(cartDTO.getDescription());
 //        holder.btnEdit.setOnClickListener(click ->
 //                context.DialogEdit(trainee));
 

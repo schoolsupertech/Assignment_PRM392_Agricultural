@@ -1,5 +1,6 @@
 package assignment.assignment_prm392.controller;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,8 @@ import assignment.assignment_prm392.R;
 import assignment.assignment_prm392.databinding.FragmentOrderBinding;
 import assignment.assignment_prm392.model.dto.ProductDTO;
 import org.jetbrains.annotations.NotNull;
+
+import java.text.DecimalFormat;
 
 public class OrderFragment extends Fragment {
     ImageView imgProductDt;
@@ -30,6 +33,7 @@ public class OrderFragment extends Fragment {
         return binding.getRoot();
     }
 
+    @SuppressLint("SetTextI18n")
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -49,8 +53,11 @@ public class OrderFragment extends Fragment {
         imgProductDt.setImageResource(R.drawable.ic_launcher_background);
         tvHeaderProductDt.setText(product.getName());
         tvDescProductDt.setText(product.getDescription());
+        edtQuantity.setText("1");
+        DecimalFormat decimalFormat = new DecimalFormat("#,##0");
+        edtPrice.setText("Total: "+ decimalFormat.format(product.getPrice()));
 
-        binding.btnPay.setOnClickListener(click -> {
+        binding.btnPay.setOnClickListener(v -> {
             Toast.makeText(getActivity(), "All done, thank you!", Toast.LENGTH_LONG).show();
             NavController navController = NavHostFragment.findNavController(this);
             navController.popBackStack(navController.getGraph().getStartDestinationId(), false);

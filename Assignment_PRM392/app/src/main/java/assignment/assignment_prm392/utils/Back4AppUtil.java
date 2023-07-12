@@ -59,6 +59,7 @@ public class Back4AppUtil {
             // Init class for Back4App
             ParseObject cart = new ParseObject("Cart");
             cart.put("totalProduct", 3);
+            cart.put("totalPrice", 99000);
             cart.saveInBackground(e -> {
                 if(e != null) {
                     Log.d("ERROR", e.getMessage());

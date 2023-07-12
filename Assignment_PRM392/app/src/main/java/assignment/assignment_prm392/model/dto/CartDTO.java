@@ -1,52 +1,39 @@
 package assignment.assignment_prm392.model.dto;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "cart", schema = "Agricultural")
 public class CartDTO {
-    private Long id;
+    private String id;
 
-    private assignment.assignment_prm392.model.dto.CustomerDTO customer;
-
-    private Integer totalProduct;
+    private int totalProduct;
 
     private Double totalPrice;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    public Long getId() {
+    public CartDTO() {
+    }
+
+    public CartDTO(String id, int totalProduct, Double totalPrice) {
+        this.id = id;
+        this.totalProduct = totalProduct;
+        this.totalPrice = totalPrice;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public CartDTO setId(Long id) {
+    public CartDTO setId(String id) {
         this.id = id;
         return this;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "customer_id")
-    public assignment.assignment_prm392.model.dto.CustomerDTO getCustomer() {
-        return customer;
-    }
-
-    public CartDTO setCustomer(assignment.assignment_prm392.model.dto.CustomerDTO customer) {
-        this.customer = customer;
-        return this;
-    }
-
-    @Column(name = "total_product")
-    public Integer getTotalProduct() {
+    public int getTotalProduct() {
         return totalProduct;
     }
 
-    public CartDTO setTotalProduct(Integer totalProduct) {
+    public CartDTO setTotalProduct(int totalProduct) {
         this.totalProduct = totalProduct;
         return this;
     }
 
-    @Column(name = "total_price")
     public Double getTotalPrice() {
         return totalPrice;
     }
