@@ -69,6 +69,11 @@ public class LoginActivity extends AppCompatActivity {
                                         Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
                                         startActivity(intent);
                                         finish();}
+                                    else{
+                                        Intent intent = new Intent(LoginActivity.this, ProductActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    }
                                 } else {
                                     Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
                                 }

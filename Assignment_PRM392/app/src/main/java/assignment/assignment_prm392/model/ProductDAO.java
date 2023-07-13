@@ -37,4 +37,8 @@ public class ProductDAO {
 
         return productDTOS;
     }
+    public void DeleteProduct(String productId){
+
+    }
+
 }
