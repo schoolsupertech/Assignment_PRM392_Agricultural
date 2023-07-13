@@ -69,11 +69,14 @@ public class LoginActivity extends AppCompatActivity {
                                         Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
                                         startActivity(intent);
                                         finish();}
+<<<<<<< HEAD
                                     else{
                                         Intent intent = new Intent(LoginActivity.this, ProductActivity.class);
                                         startActivity(intent);
                                         finish();
                                     }
+=======
+>>>>>>> d1403165ad9e53d2629e719bb31318fa2c133c13
                                 } else {
                                     Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
                                 }
