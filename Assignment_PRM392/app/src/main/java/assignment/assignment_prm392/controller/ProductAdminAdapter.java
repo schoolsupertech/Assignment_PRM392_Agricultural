@@ -45,22 +45,26 @@ public class ProductAdminAdapter extends BaseAdapter{
     static class ViewHolder {
         ImageView img;
         TextView tvHeader, tvDesc;
+        ImageView  imageViewDeleteAdmin,imageViewEditAdmin;
+
     }
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        ProductAdapter.ViewHolder holder;
+        ProductAdminAdapter.ViewHolder holder;
 
         if(view == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(layout, viewGroup, false);
-            holder = new ProductAdapter.ViewHolder();
-            holder.img = view.findViewById(R.id.imageView);
-            holder.tvHeader = view.findViewById(R.id.tvProductHeader);
-            holder.tvDesc = view.findViewById(R.id.tvProductDesc);
+            holder = new ProductAdminAdapter.ViewHolder();
+            holder.img = view.findViewById(R.id.imgProductAdmin);
+            holder.tvHeader = view.findViewById(R.id.tvProductHeaderAdmin);
+            holder.tvDesc = view.findViewById(R.id.tvProductDescAdmin);
+            holder.imageViewDeleteAdmin =view.findViewById(R.id.imageViewDeleteAdmin);
+            holder.imageViewEditAdmin = view.findViewById(R.id.imageViewEditAdmin);
             view.setTag(holder);
         }
         else {
-            holder = (ProductAdapter.ViewHolder) view.getTag();
+            holder = (ProductAdminAdapter.ViewHolder) view.getTag();
         }
 //        holder.btnEdit.setFocusable(false);
 //        holder.btnEdit.setFocusableInTouchMode(false);
@@ -69,6 +73,7 @@ public class ProductAdminAdapter extends BaseAdapter{
         holder.img.setImageResource(R.drawable.ic_launcher_background);
         holder.tvHeader.setText(product.getName());
         holder.tvDesc.setText(product.getDescription());
+
 //        holder.btnEdit.setOnClickListener(click ->
 //                context.DialogEdit(trainee));
 

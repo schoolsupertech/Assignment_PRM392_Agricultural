@@ -22,44 +22,35 @@ import assignment.assignment_prm392.model.dto.ProductDTO;
 public class ProductAdminActivity extends AppCompatActivity {
     ListView listView;
     ArrayList<ProductDTO> listProduct = null;
-    ProductAdapter productAdapter = null;
+    ProductAdminAdapter productAdminAdapter = null;
     FragmentListProductBinding binding;
-
-    @Override
-    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentListProductBinding.inflate(inflater, container, false);
-        return binding.getRoot();
-    }
-
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        listView = view.findViewById(R.id.lvProduct);
-
-        ProductDAO productDAO = new ProductDAO();
-        listProduct = new ArrayList<>();
-        listProduct = productDAO.getListProduct();
-        productAdapter = new ProductAdapter(requireActivity(), R.layout.list_product, listProduct);
-        listView.setAdapter(productAdapter);
-        listView.setOnItemClickListener((adapterView, v, i, l) -> {
-            Bundle bundle = new Bundle();
-            bundle.putSerializable("Product Detail", listProduct.get(i));
-            NavHostFragment.findNavController(this)
-                    .navigate(R.id.action_ListProductFragment_to_ProductDetailFragment, bundle);
-        });
-    }
-
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_admin);
 
+
+        listView = findViewById(R.id.lvProductAdmin);
+
+        ProductDAO productDAO = new ProductDAO();
+        listProduct = new ArrayList<>();
+        listProduct = productDAO.getListProduct();
+        productAdminAdapter = new ProductAdminAdapter(this, R.layout.list_product_admin, listProduct);
+        listView.setAdapter(productAdminAdapter);
+//        listView.setOnItemClickListener((adapterView, v, i, l) -> {
+//            Bundle bundle = new Bundle();
+//            bundle.putSerializable("Product Detail", listProduct.get(i));
+//            NavHostFragment.findNavController(this)
+//                    .navigate(R.id.action_ListProductFragment_to_ProductDetailFragment, bundle);
+//        });
     }
+
+
+
+    public void onDestroyView() {
+        super.onDestroy();
+        binding = null;
+    }
+
+
 }

@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imgProductAdmin"
         android:layout_width="89dp"
         android:layout_height="83dp"
         android:layout_marginStart="16dp"
@@ -16,7 +16,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/tvProductHeader"
+        android:id="@+id/tvProductHeaderAdmin"
         android:layout_width="162dp"
         android:layout_height="32dp"
         android:layout_marginHorizontal="10dp"
@@ -25,13 +25,13 @@
         android:textAlignment="viewStart"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintBottom_toBottomOf="@+id/imgProductAdmin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/imgProductAdmin"
         app:layout_constraintVertical_bias="0.137" />
 
     <TextView
-        android:id="@+id/tvProductDesc"
+        android:id="@+id/tvProductDescAdmin"
         android:layout_width="161dp"
         android:layout_height="33dp"
         android:layout_marginHorizontal="10dp"
@@ -39,31 +39,31 @@
         android:layout_weight="1"
         android:text="@string/tvProductDesc"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/tvProductHeader"
+        app:layout_constraintEnd_toEndOf="@+id/tvProductHeaderAdmin"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvProductHeader"
+        app:layout_constraintStart_toStartOf="@+id/tvProductHeaderAdmin"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.128" />
 
     <ImageView
-        android:id="@+id/imageViewDelete"
+        android:id="@+id/imageViewDeleteAdmin"
         android:layout_width="35dp"
         android:layout_height="50dp"
         android:layout_marginEnd="24dp"
         android:src="@drawable/delete"
-        app:layout_constraintBottom_toBottomOf="@+id/imageViewEdit"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewEditAdmin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageViewEdit"
+        app:layout_constraintTop_toTopOf="@+id/imageViewEditAdmin"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/imageViewEdit"
+        android:id="@+id/imageViewEditAdmin"
         android:layout_width="35dp"
         android:layout_height="50dp"
         android:layout_marginEnd="72dp"
         android:src="@drawable/edit"
-        app:layout_constraintBottom_toBottomOf="@+id/tvProductHeader"
+        app:layout_constraintBottom_toBottomOf="@+id/tvProductHeaderAdmin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvProductHeader"
+        app:layout_constraintTop_toTopOf="@+id/tvProductHeaderAdmin"
         app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

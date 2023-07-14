@@ -1,8 +1,10 @@
-package assignment.assignment_prm392;
+package assignment.assignment_prm392.utils;
 
 import android.app.Application;
 
 import com.parse.Parse;
+
+import assignment.assignment_prm392.R;
 
 public class App extends Application {
     @Override
